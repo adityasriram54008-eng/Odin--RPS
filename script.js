@@ -57,6 +57,10 @@ for(let i = 0; i < 5; i++) {
     playRound(human, comp)
 }
 
+console.log("Human wins: " + humanScore)
+console.log("Computer wins: " + compScore)
+console.log("Rounds tied: " + tieScore)
+
 /*let rockButton = document.getElementById("rock")
 let paperButton = document.getElementById("paper")
 let scissorsButton = document.getElementById("scissors")
@@ -69,40 +73,6 @@ let choiceArray = ["rock","paper","scissors"]
 
 let userCount = 0
 let compCount = 0
-
-function playGame(event) {
-    let index = Math.floor(Math.random() * 10 % 3)
-    let compChoice = choiceArray[index]
-
-    if(compChoice==="rock" && humanChoice === "paper")
-    {
-        humanScore++
-    }
-    else if(compChoice==="rock" && humanChoice === "scissors")
-    {
-        compScore++
-    }
-    else if(compChoice==="paper" && humanChoice === "rock")
-    {
-        compScore++
-    }
-    else if(compChoice==="paper" && humanChoice === "scissors")
-    {
-        humanScore++
-    }
-    else if(compChoice==="scissors" && humanChoice === "rock")
-    {
-        humanScore++
-    }
-    else if(compChoice==="scissors" && humanChoice === "paper")
-    {
-        compScore++
-    }
-    else
-    {
-        tieScore.innerText = (tieScore.innerText)+1
-    }
-}
 
 rockButton.addEventListener("click", playGame);
 paperButton.addEventListener("click", playGame);
