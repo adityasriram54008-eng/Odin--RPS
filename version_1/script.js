@@ -1,9 +1,25 @@
 console.log("helloworld")
 
+let rButton = document.getElementById("rock")
+let pButton = document.getElementById("paper")
+let sButton = document.getElementById("scissor")
+
 let choices = ["rock","paper","scissors"]
+
 let humanScore = 0
 let compScore = 0
 let tieScore = 0
+
+rButton.addEventListener("click", function() {
+    playRound("rock", getcompChoice());
+})
+pButton.addEventListener("click", function() {
+    playRound("paper", getcompChoice());
+})
+sButton.addEventListener("click", function() {
+    playRound("scissors", getcompChoice());
+})
+
 
 function getcompChoice() {
 
@@ -12,10 +28,6 @@ function getcompChoice() {
     return compChoice
 }
 
-function getHumanChoice() {
-    let hChoice = prompt("Enter your choice: ")
-    return hChoice
-}
 
 function playRound(humanChoice, compChoice) {
     humanChoice = humanChoice.toLowerCase()
@@ -49,17 +61,11 @@ function playRound(humanChoice, compChoice) {
     {
         tieScore++
     }
-
-}
-for(let i = 0; i < 5; i++) {
-    const human = getcompChoice()
-    const comp = getHumanChoice()
-    playRound(human, comp)
+    console.log("Human wins: " + humanScore)
+    console.log("Computer wins: " + compScore)
+    console.log("Rounds tied: " + tieScore)
 }
 
-console.log("Human wins: " + humanScore)
-console.log("Computer wins: " + compScore)
-console.log("Rounds tied: " + tieScore)
 
 /*let rockButton = document.getElementById("rock")
 let paperButton = document.getElementById("paper")
